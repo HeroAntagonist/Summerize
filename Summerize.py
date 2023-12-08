@@ -17,7 +17,8 @@ def type_out(message):
 def summerize_web(url):
     loader = WebBaseLoader(url)
     docs = loader.load()
-    llm = ChatOpenAI(temperature=0, model='gpt-3.5-turbo-16k')
+    #Remember to set env var for openai token #OPENAI_API_KEY=""
+    llm = ChatOpenAI(temperature=0, model='gpt-3.5-turbo-16k') 
     chain = load_summarize_chain(llm, chain_type="stuff", verbose=False)
     return (chain.run(docs))
 
@@ -36,7 +37,7 @@ while True:
     user_input = input("Do you want to summerize another webpage (yes/no):")
     if user_input.lower() not in ('yes', 'y'):
         print("Exiting the script...")
-        break  # Exit the loop, which ends the script
+        break 
 
 
 
