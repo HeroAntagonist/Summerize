@@ -38,8 +38,3 @@ while True:
     if user_input.lower() not in ('yes', 'y'):
         print("Exiting the script...")
         break 
-
-
-
-
-
